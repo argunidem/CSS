@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #000;
+      }
+      .box {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        align-content: space-between;
+        flex-wrap: wrap;
+        width: 150px;
+        height: 150px;
+        animation-name: main-box;
+        animation-duration: 2s;
+        animation-delay: 3s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-fill-mode: both;
+      }
+      .inner-box {
+        width: 73px;
+        height: 73px;
+      }      
+      @keyframes main-box {
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+      .inner-box:nth-of-type(1) {
+        background: #400;
+        animation-name: red-box;
+        animation-duration: 3s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+      }
+      .inner-box:nth-of-type(2) {
+        background: #040;
+        animation-name: green-box;
+        animation-duration: 3s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+      }
+      .inner-box:nth-of-type(3) {
+        background: #009;
+        animation-name: blue-box;
+        animation-duration: 3s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+      }
+      .inner-box:nth-of-type(4) {
+        background: #748b20;
+        animation-name: yellow-box;
+        animation-duration: 3s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+      }
+      @keyframes red-box {
+        0% {transform: translate(0%, 0%);}
+        25% {transform: translate(-500%, 0%) rotate(360deg); border-radius: 10px;}
+        50% {transform: translate(-500%, -300%) rotate(0deg); border-radius: 20px;}
+        75% {transform: translate(0%, -300%) rotate(360deg); border-radius: 10px;}
+        100% {transform: translate(0%, 0%) rotate(0deg);}
+      }
+      @keyframes green-box {
+        0% {transform: translate(0%, 0%);}
+        25% {transform: translate(500%, 0%) rotate(360deg); border-radius: 10px;}
+        50% {transform: translate(500%, -300%) rotate(0deg); border-radius: 20px;}
+        75% {transform: translate(0%, -300%) rotate(360deg); border-radius: 10px;}
+        100% {transform: translate(0%, 0%) rotate(0deg);}
+      }
+      @keyframes blue-box {
+        0% {transform: translate(0%, 0%);}
+        25% {transform: translate(-500%, 0%) rotate(360deg); border-radius: 10px;}
+        50% {transform: translate(-500%, 300%) rotate(0deg); border-radius: 20px;}
+        75% {transform: translate(0%, 300%) rotate(360deg); border-radius: 10px;}
+        100% {transform: translate(0%, 0%) rotate(0deg);}
+      }
+      @keyframes yellow-box {
+        0% {transform: translate(0%, 0%);}
+        25% {transform: translate(500%, 0%) rotate(360deg); border-radius: 10px;}
+        50% {transform: translate(500%, 300%) rotate(0deg); border-radius: 20px;}
+        75% {transform: translate(0%, 300%) rotate(360deg); border-radius: 10px;}
+        100% {transform: translate(0%, 0%) rotate(0deg);}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="inner-box"></div>
+      <div class="inner-box"></div>
+      <div class="inner-box"></div>
+      <div class="inner-box"></div>
+    </div>
+  </body>
+</html>
