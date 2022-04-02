@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+body {
+  background: #aaa;
+  color: #fff;
+  width: 100vw;
+  height: 100vh;
+}
+#box-one {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(0%, -50%);
+  width: 5em;
+  height: 5em;
+  background: #045;
+  border-radius: 10%;
+  animation-name: first-animation;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  overflow:visible
+}
+@keyframes first-animation {
+  0% {transform: translate(0%, -50%) rotate(0deg); left: 20%;}
+  50% {transform: translate(0%, -50%) rotate(-360deg); left: 70%;}
+  100% {transform: translate(0%, -50%) rotate(-720deg); left: 20%;}
+}
+#box-one-rotate {
+  width: 2.5em;
+  height: 2.5em;
+  background: #202;
+  border-radius: 10%;
+  transform: translate(-100%, -100%);
+  animation-name: rotating-box;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;  
+}
+@keyframes rotating-box {
+  25% {transform: translate(200%, -100%) rotate(200deg);}
+  50% {transform: translate(200%, 200%) rotate(400deg);}
+  75% {transform: translate(-100%, 200%) rotate(600deg);}
+  100% {transform: translate(-100%, -100%) rotate(800deg);}
+}
+#box-two {
+  position: absolute;
+  top: 50%;
+  right: 20%;
+  transform: translate(0%, -50%);
+  width: 5em;
+  height: 5em;
+  background: #1a6b43;
+  border-radius: 10%;
+  animation-name: second-box-animation;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes second-box-animation {
+  0% {transform: translate(0%, -50%); top: 50%; right: 20%;}
+  25% {transform: translate(0%, -50%) rotate(360deg); top: 90%; right: 20%;}
+  50% {transform: translate(0%, -50%) rotate(720deg); top: 90%; right: 80%;}
+  75% {transform: translate(0%, -50%) rotate(1080deg); top: 10%; right: 80%;}
+  100% {transform: translate(0%, -50%) rotate(1440deg); top: 10%; right: 20%;}
+}
+
+@media (max-width: 768px) {
+  #box-one, #box-two {
+    width: 4em;
+    height: 4em;
+  }
+  #box-one-rotate {
+    width: 2em;
+    height: 2em;
+  }
+}
